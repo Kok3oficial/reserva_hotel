@@ -1,19 +1,28 @@
-require('dotenv').config(); //permite obtener variables definidas en el archivo .env
+require('dotenv').config();
 const express = require('express');
-const userRoutes = require('./routes/userRoutes');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const reservaRoutes = require('./routes/reservaRoutes');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json()) // middleware para procesar peticiones tipo JSON
-app.use(express.urlencoded({ extended: true}));
+// Middleware
+app.use(bodyParser.json());
 
-//app.post('/usuario', UsuarioController.userRegister)
-// 
-app.use('/api', userRoutes)
+// Conexión a la base de datos
+mongoose.connect('mongodb://localhost:27017/hotel_reservas', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Conectado a la base de datos');
+}).catch(err => {
+    console.error('Error de conexión', err);
+});
 
-app.listen(port, () => {
-    console.log('Servidor iniciado en el puerto ' + port);
-})
+// Rutas
+app.use('/api/reservas', reservaRoutes);
 
-// http:localhost:3000/api/usuario
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
