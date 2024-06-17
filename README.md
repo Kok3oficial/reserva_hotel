@@ -68,5 +68,4 @@ Esta es una aplicación de servicios para la gestión de reservas en hoteles, de
 ## Contribuir
 - La aplicación es de codigo abierto y cualquier modificación para su mejora es bienvenida. Muchas gracias por apoyar el proyecto.
 
-#### Created by koke1oficial
-- 
+###### Created by koke1oficial
