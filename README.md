@@ -1,5 +1,5 @@
 # Gestión de Reservas de Hoteles
-
+<img src="https://www.clubdelectores.cl/wp-content/uploads/1683552395-36.jpg">
 Esta es una aplicación de servicios para la gestión de reservas en hoteles, desarrollada con Node.js y Express.
 
 ## Instalación
@@ -64,3 +64,9 @@ Esta es una aplicación de servicios para la gestión de reservas en hoteles, de
 ### Filtrar reservas por número de huéspedes
 - **Método:** GET
 - **Endpoint:** `/api/reservas?num_huespedes=NUM_HUESPEDES`
+
+## Contribuir
+- La aplicación es de codigo abierto y cualquier modificación para su mejora es bienvenida. Muchas gracias por apoyar el proyecto.
+
+####Created by koke1oficial
+- 
